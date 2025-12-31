@@ -22,7 +22,6 @@
       overflow-x: hidden;
     }
 
-    /* Kar Tanesi Efekti */
     .snow { position: fixed; top: -10px; color: white; pointer-events: none; z-index: 10; animation: fall linear infinite; }
     @keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
 
@@ -34,7 +33,6 @@
       padding: 40px 20px;
     }
 
-    /* Fotoğraf Çerçevesi */
     .photo-frame {
       width: 220px;
       height: 220px;
@@ -77,9 +75,10 @@
     .show-content { display: block; opacity: 1; transform: translateY(0); }
 
     .love-list { list-style: none; margin: 30px 0; }
-    .love-list li { margin: 15px 0; font-style: italic; color: #f3cf7a; font-size: 1.2rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
+    .love-list li { margin: 15px 0; font-style: italic; color: #f3cf7a; font-size: 1.2rem; }
     
-    .signature { margin-top: 60px; font-size: 1.1rem; color: #f3cf7a; font-weight: bold; letter-spacing: 1px; }
+    .signature { margin-top: 60px; font-size: 1.1rem; color: #f3cf7a; font-weight: bold; }
+    .silent-wish { font-style: italic; color: #d1d1d1; margin-top: 25px; border-top: 1px solid rgba(243, 207, 122, 0.3); padding-top: 20px; }
   </style>
 </head>
 <body>
@@ -87,7 +86,7 @@
   <div class="container">
     <div id="intro">
       <h1>Yeni bir yıla girerken...</h1>
-      <p>Bu küçük sayfa, 2026'ya seninle el ele girerken kalbinde bir tebessüm olsun diye hazırlandı.</p>
+      <p>Bu küçük sayfa, 2026'ya seninle el ele girmesekte kalbinde bir tebessüm olsun diye hazırlandı.</p>
       <button class="btn-start" onclick="openGift()">✨ Bizim için bir dokun...</button>
     </div>
 
@@ -96,17 +95,22 @@
         <img src="Adsız tasarım (1).png" alt="Bizim En Güzel Anımız">
       </div>
 
-      <p>2025'in bana verdiği en güzel hediye sensin.<br>Seninle geçen her an, ömrümün en kıymetli hazinesi.</p>
+      <p>2025'in bana verdiği en güzel hediye sensin sevgilim.<br>Seninle geçen her an, ömrümün en kıymetli hazinesi.</p>
       
-      <h3>2026'da kalbimden geçenler;</h3>
+      <h3>2026 için küçük dilekler;</h3>
       <ul class="love-list">
-        <li>❤️ Ellerin ellerimden, huzurun yüreğimden hiç eksilmesin</li>
-        <li>✨ Her yeni güne senin gülüşünle uyanmak nasip olsun</li>
-        <li>🥂 Bütün hayallerimizi bu yıl beraber gerçeğe dönüştürelim</li>
-        <li>🌹 Her geçen yıl seni daha çok, daha derinden seveyim</li>
+        <li>❤️ Ellerin ellerimden hiç ayrılmasın</li>
+        <li>✨ Gözlerindeki o huzurlu ışık hiç sönmesin</li>
+        <li>🥂 En büyük kahkahalarımızı beraber atalım</li>
+        <li>🌹 Her sabah senin sevginle uyanmak nasip olsun</li>
       </ul>
 
-      <p>Yeni yılın bize hep aşk, sağlık ve mutluluk getirmesi dileğiyle...<br>İyi ki varsın sevgilim.</p>
+      <div class="silent-wish">
+        <p>Herkes yeni yıl için dilek tutar...<br>Ben de tuttum. Ama yüksek sesle söylemedim.</p>
+        <p>Bazı dilekler sessiz olunca daha güzel oluyor.</p>
+      </div>
+
+      <p style="margin-top: 30px;">Yeni yılın bize hep aşk ve mutluluk getirmesi dileğiyle... İyi ki varsın.</p>
       
       <div class="signature">— 2025'ten sana bir hatıra, Yasemin</div>
     </div>
@@ -123,12 +127,10 @@
       const photo = document.getElementById('photo');
       const audio = document.getElementById('music');
 
-      // Geçiş animasyonu
       intro.style.display = 'none';
       content.classList.add('show-content');
       photo.style.display = 'block';
 
-      // Müzik kontrolü (Yavaşça artan ses)
       audio.volume = 0;
       audio.play().then(() => {
         let vol = 0;
@@ -140,12 +142,9 @@
             clearInterval(interval);
           }
         }, 200);
-      }).catch(e => {
-        console.log("Müzik için etkileşim gerekiyor.");
-      });
+      }).catch(e => console.log("Müzik için etkileşim gerekiyor."));
     }
 
-    // Kar Yağdırma Efekti
     function createSnow() {
       const snow = document.createElement('div');
       snow.classList.add('snow');
