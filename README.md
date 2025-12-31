@@ -1,1 +1,151 @@
-# y-lbas-
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Yeni Yılda Seninle...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Georgia', serif; }
+    
+    body {
+      min-height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
+                  url("https://images.unsplash.com/photo-1482517967863-00e15c9b44be?auto=format&fit=crop&w=1920&q=80");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow-x: hidden;
+    }
+
+    /* Kar Tanesi Efekti */
+    .snow { position: fixed; top: -10px; color: white; pointer-events: none; z-index: 10; animation: fall linear infinite; }
+    @keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
+
+    .container {
+      width: 90%;
+      max-width: 600px;
+      text-align: center;
+      z-index: 5;
+      padding: 40px 20px;
+    }
+
+    /* Fotoğraf Çerçevesi */
+    .photo-frame {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 25px;
+      border-radius: 50%;
+      border: 3px solid #f3cf7a;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(243, 207, 122, 0.5);
+      display: none; /* İlk başta gizli */
+    }
+    .photo-frame img { width: 100%; height: 100%; object-fit: cover; }
+
+    h1 { font-size: 2.2rem; color: #f3cf7a; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+    p { font-size: 1.1rem; line-height: 1.8; color: #e0e0e0; margin-bottom: 15px; }
+
+    .btn-start {
+      padding: 15px 35px;
+      font-size: 1.1rem;
+      background: #f3cf7a;
+      color: #331d00;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      transition: 0.4s;
+    }
+    .btn-start:hover { transform: scale(1.05); background: #fff; }
+
+    .hidden-content { display: none; opacity: 0; transform: translateY(20px); transition: all 1.5s ease; }
+    .show-content { display: block; opacity: 1; transform: translateY(0); }
+
+    .love-list { list-style: none; margin: 25px 0; }
+    .love-list li { margin: 12px 0; font-style: italic; color: #f3cf7a; }
+    
+    .signature { margin-top: 50px; font-size: 0.9rem; opacity: 0.8; letter-spacing: 2px; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div id="intro">
+      <h1>Yeni bir yıla girerken...</h1>
+      <p>Bu küçük sayfa, 2026'ya girerken kalbinde bir sıcaklık hissetmen için hazırlandı.</p>
+      <button class="btn-start" onclick="openGift()">✨ Bizim için bir dokun...</button>
+    </div>
+
+    <div id="main-content" class="hidden-content">
+      <div class="photo-frame" id="photo">
+        <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=400&q=80" alt="Biz">
+      </div>
+
+      <p>2025'in en güzel yanı, her anında senin olmandı.<br>Seninle geçen her gün, hayatımın en değerli hediyesiydi.</p>
+      
+      <h3>2026 için kalbimden geçenler;</h3>
+      <ul class="love-list">
+        <li>❤️ Ellerin ellerimden hiç ayrılmasın,</li>
+        <li>✨ Gözlerindeki ışık hiç sönmesin,</li>
+        <li>🥂 En büyük kahkahalarımızı bu yıl beraber atalım,</li>
+        <li>🌹 Her sabah senin sevginle uyanmak nasip olsun.</li>
+      </ul>
+
+      <p>Yeni yılda da en sevdiğin yer, benim yanım olsun.<br>Seni çok seviyorum.</p>
+      
+      <div class="signature">— 2025'ten sana bir hatıra, Yasemin</div>
+    </div>
+  </div>
+
+  <audio id="music" loop>
+    <source src="bi_sigara.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function openGift() {
+      const intro = document.getElementById('intro');
+      const content = document.getElementById('main-content');
+      const photo = document.getElementById('photo');
+      const audio = document.getElementById('music');
+
+      // Geçiş animasyonu
+      intro.style.display = 'none';
+      content.classList.add('show-content');
+      photo.style.display = 'block';
+
+      // Müzik başlatma
+      audio.volume = 0;
+      audio.play();
+      let vol = 0;
+      let interval = setInterval(() => {
+        if (vol < 0.7) {
+          vol += 0.05;
+          audio.volume = vol;
+        } else {
+          clearInterval(interval);
+        }
+      }, 200);
+    }
+
+    // Kar Yağdırma Efekti
+    function createSnow() {
+      const snow = document.createElement('div');
+      snow.classList.add('snow');
+      snow.innerHTML = '❄';
+      snow.style.left = Math.random() * 100 + 'vw';
+      snow.style.animationDuration = Math.random() * 3 + 4 + 's';
+      snow.style.opacity = Math.random();
+      snow.style.fontSize = Math.random() * 10 + 10 + 'px';
+      document.body.appendChild(snow);
+      setTimeout(() => snow.remove(), 7000);
+    }
+    setInterval(createSnow, 150);
+  </script>
+</body>
+</html>
