@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Yeni Yılda Seninle...</title>
+  <title>Yeni Yılda Seninle... ❤️</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
@@ -10,7 +10,7 @@
     
     body {
       min-height: 100vh;
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)), 
                   url("https://images.unsplash.com/photo-1482517967863-00e15c9b44be?auto=format&fit=crop&w=1920&q=80");
       background-size: cover;
       background-position: center;
@@ -36,44 +36,50 @@
 
     /* Fotoğraf Çerçevesi */
     .photo-frame {
-      width: 200px;
-      height: 200px;
-      margin: 0 auto 25px;
-      border-radius: 20px; /* Modern karemsi yuvarlak */
-      border: 3px solid #f3cf7a;
+      width: 220px;
+      height: 220px;
+      margin: 0 auto 30px;
+      border-radius: 25px;
+      border: 4px solid #f3cf7a;
       overflow: hidden;
-      box-shadow: 0 0 25px rgba(243, 207, 122, 0.4);
+      box-shadow: 0 0 30px rgba(243, 207, 122, 0.4);
       display: none; 
-      animation: fadeIn 2s ease;
+      animation: zoomIn 2s ease;
     }
     .photo-frame img { width: 100%; height: 100%; object-fit: cover; }
 
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes zoomIn { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } }
 
-    h1 { font-size: 2.2rem; color: #f3cf7a; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-    p { font-size: 1.1rem; line-height: 1.8; color: #e0e0e0; margin-bottom: 15px; }
+    h1 { font-size: 2.2rem; color: #f3cf7a; margin-bottom: 20px; text-shadow: 2px 2px 8px rgba(0,0,0,0.7); }
+    p { font-size: 1.15rem; line-height: 1.8; color: #f0f0f0; margin-bottom: 15px; }
 
     .btn-start {
-      padding: 16px 40px;
-      font-size: 1.1rem;
+      padding: 18px 45px;
+      font-size: 1.2rem;
       background: #f3cf7a;
       color: #331d00;
       border: none;
       border-radius: 50px;
       cursor: pointer;
       font-weight: bold;
-      box-shadow: 0 4px 15px rgba(243, 207, 122, 0.3);
+      box-shadow: 0 4px 20px rgba(243, 207, 122, 0.4);
       transition: 0.4s;
+      animation: heartbeat 2s infinite;
     }
-    .btn-start:hover { transform: scale(1.05); background: #fff; }
+    @keyframes heartbeat {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    .btn-start:hover { transform: scale(1.1); background: #fff; animation: none; }
 
-    .hidden-content { display: none; opacity: 0; transform: translateY(20px); transition: all 1.5s ease; }
+    .hidden-content { display: none; opacity: 0; transform: translateY(30px); transition: all 1.8s ease; }
     .show-content { display: block; opacity: 1; transform: translateY(0); }
 
-    .love-list { list-style: none; margin: 25px 0; text-align: center; }
-    .love-list li { margin: 12px 0; font-style: italic; color: #f3cf7a; font-size: 1.15rem; }
+    .love-list { list-style: none; margin: 30px 0; }
+    .love-list li { margin: 15px 0; font-style: italic; color: #f3cf7a; font-size: 1.2rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
     
-    .signature { margin-top: 50px; font-size: 1rem; opacity: 0.9; color: #f3cf7a; font-weight: bold; }
+    .signature { margin-top: 60px; font-size: 1.1rem; color: #f3cf7a; font-weight: bold; letter-spacing: 1px; }
   </style>
 </head>
 <body>
@@ -81,33 +87,33 @@
   <div class="container">
     <div id="intro">
       <h1>Yeni bir yıla girerken...</h1>
-      <p>Bu küçük sayfa, 2026'ya girerken kalbinde bir sıcaklık hissetmen için hazırlandı.</p>
+      <p>Bu küçük sayfa, 2026'ya seninle el ele girerken kalbinde bir tebessüm olsun diye hazırlandı.</p>
       <button class="btn-start" onclick="openGift()">✨ Bizim için bir dokun...</button>
     </div>
 
     <div id="main-content" class="hidden-content">
       <div class="photo-frame" id="photo">
-        <img src="Adsız tasarım (1).png" alt="Bizim Fotoğrafımız">
+        <img src="Adsız tasarım (1).png" alt="Bizim En Güzel Anımız">
       </div>
 
-      <p>2025'in en güzel yanı, her anında senin olmandı.<br>Seninle geçen her gün, hayatımın en değerli hediyesiydi.</p>
+      <p>2025'in bana verdiği en güzel hediye sensin.<br>Seninle geçen her an, ömrümün en kıymetli hazinesi.</p>
       
-      <h3>2026 için kalbimden geçenler;</h3>
+      <h3>2026'da kalbimden geçenler;</h3>
       <ul class="love-list">
-        <li>❤️ Ellerin ellerimden hiç ayrılmasın</li>
-        <li>✨ Gözlerindeki ışık hiç sönmesin</li>
-        <li>🥂 En büyük kahkahalarımızı beraber atalım</li>
-        <li>🌹 Her sabah senin sevginle uyanayım</li>
+        <li>❤️ Ellerin ellerimden, huzurun yüreğimden hiç eksilmesin</li>
+        <li>✨ Her yeni güne senin gülüşünle uyanmak nasip olsun</li>
+        <li>🥂 Bütün hayallerimizi bu yıl beraber gerçeğe dönüştürelim</li>
+        <li>🌹 Her geçen yıl seni daha çok, daha derinden seveyim</li>
       </ul>
 
-      <p>Yeni yılda da en sevdiğin yer, benim yanım olsun.<br>Seni çok seviyorum.</p>
+      <p>Yeni yılın bize hep aşk, sağlık ve mutluluk getirmesi dileğiyle...<br>İyi ki varsın sevgilim.</p>
       
       <div class="signature">— 2025'ten sana bir hatıra, Yasemin</div>
     </div>
   </div>
 
   <audio id="music" loop>
-    <source src="bi_sigara.mp3" type="audio/mpeg">
+    <source src="Sezen-Aksu-Canimsin-Sen (mp3cut.net).mp3" type="audio/mpeg">
   </audio>
 
   <script>
@@ -117,11 +123,12 @@
       const photo = document.getElementById('photo');
       const audio = document.getElementById('music');
 
+      // Geçiş animasyonu
       intro.style.display = 'none';
       content.classList.add('show-content');
       photo.style.display = 'block';
 
-      // Müzik kontrolü
+      // Müzik kontrolü (Yavaşça artan ses)
       audio.volume = 0;
       audio.play().then(() => {
         let vol = 0;
@@ -133,7 +140,9 @@
             clearInterval(interval);
           }
         }, 200);
-      }).catch(e => console.log("Müzik otomatik başlatılamadı: ", e));
+      }).catch(e => {
+        console.log("Müzik için etkileşim gerekiyor.");
+      });
     }
 
     // Kar Yağdırma Efekti
